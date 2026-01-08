@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "Lao Slip OCR API",
+    "description": "Collection for testing Lao payment slip OCR API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "OCR Slip Processing",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": "slip/first.jpeg",
+              "description": "Upload a payment slip image"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/ocr/slip",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["ocr", "slip"]
+        }
+      }
+    }
+  ]
+}
